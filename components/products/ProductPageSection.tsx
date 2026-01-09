@@ -1,5 +1,11 @@
 import ProductCard from './ProductCard';
 import Navbar from '../navbar/Navbar';
+import { Sniglet } from 'next/font/google';
+
+export const sniglet = Sniglet({
+  subsets: ['latin'],
+  weight: ['400', '800'],
+})
 
 const products = [
   {
@@ -48,7 +54,7 @@ const products = [
 
 export default function ProductPageSection() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#cbd6da] via-[#dbe4e8] to-white">
+    <div className="min-h-screen bg-[#f5f5f5]">
       
       {/* CONTENT CONTAINER */}
       <section className="mx-auto max-w-7xl px-4 py-10">
@@ -61,9 +67,9 @@ export default function ProductPageSection() {
             <h1 className="text-2xl font-bold text-gray-900">
              Products page
             </h1>
-            <p className="text-gray-600">
-              Quality products curated for you
-            </p>
+            <p className={`${sniglet.className} text-sm text-gray-600`}>
+  Quality products curated for you
+</p>
           </div>
         </div>
 

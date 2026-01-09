@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { useStore } from '@/store/useStore';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 export default function CartPage() {
   const { cart, updateQty, removeFromCart, checkout } = useStore();
@@ -62,7 +61,7 @@ export default function CartPage() {
                         onClick={() =>
                           updateQty(item.id, Math.max(1, item.quantity - 1))
                         }
-                        className="h-8 w-8 rounded-md bg-gray-300 text-lg font-bold text-gray-700 hover:bg-gray-400 transition"
+                        className="h-8 w-8 rounded-md  border border-red-700 bg-gray-300 text-lg font-bold text-gray-700 hover:bg-gray-400 transition"
                       >
                         -
                       </button>
@@ -71,7 +70,7 @@ export default function CartPage() {
 
                       <button
                         onClick={() => updateQty(item.id, item.quantity + 1)}
-                        className="h-8 w-8 rounded-md bg-gray-300 text-lg font-bold text-gray-700 hover:bg-gray-400 transition"
+                        className="h-8 w-8 rounded-md border border-b-emerald-700 bg-gray-300 text-lg font-bold text-gray-700 hover:bg-gray-400 transition"
                       >
                         +
                       </button>
@@ -90,9 +89,9 @@ export default function CartPage() {
             </div>
 
             {/* Total */}
-            <div className="mt-6 flex items-center justify-between border-t pt-4 font-semibold">
+            <div className="mt-6 bg-[#c1bdba] flex items-center justify-between border-t pt-4 font-semibold">
               <span>Total</span>
-              <span>₦{total.toLocaleString()}</span>
+              <span className='bg-[#e8e2e0] p-2'>₦{total.toLocaleString()}</span>
             </div>
 
             {/* Checkout */}

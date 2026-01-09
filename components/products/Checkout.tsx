@@ -25,20 +25,61 @@ export default function CheckoutPage() {
 
         <h1 className="text-2xl font-bold mb-4 text-gray-900">Order Confirmation</h1>
 
-        <div className="space-y-3">
-          <p><span className="font-semibold">Order ID:</span> {latestOrder.id}</p>
-          <p><span className="font-semibold">Status:</span> {latestOrder.status}</p>
-          <p><span className="font-semibold">Total:</span> ₦{latestOrder.total.toLocaleString()}</p>
+        <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm space-y-4">
+  
+  {/* Order Meta */}
+  <div className="grid grid-cols-2 gap-4 text-sm">
+    <div>
+      <p className="text-gray-500">Order ID</p>
+      <p className="font-semibold text-gray-900">{latestOrder.id}</p>
+    </div>
 
-          <div>
-            <p className="font-semibold mb-1">Items Ordered:</p>
-            <ul className="ml-4 list-disc">
-              {latestOrder.items.map(item => (
-                <li key={item.id}>{item.name} × {item.quantity}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div>
+      <p className="text-gray-500">Status</p>
+      <span
+        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold
+          ${
+            latestOrder.status === 'completed'
+              ? 'bg-emerald-50 text-emerald-700'
+              : latestOrder.status === 'pending'
+              ? 'bg-amber-50 text-amber-700'
+              : 'bg-red-50 text-red-700'
+          }`}
+      >
+        {latestOrder.status}
+      </span>
+    </div>
+  </div>
+
+  {/* Total */}
+  <div className="flex items-center justify-between rounded-xl bg-gray-50 px-4 py-3">
+    <p className="text-sm text-gray-600">Total Amount</p>
+    <p className="text-lg font-bold text-gray-900">
+      ₦{latestOrder.total.toLocaleString()}
+    </p>
+  </div>
+
+  {/* Items */}
+  <div>
+    <p className="mb-2 text-sm font-semibold text-gray-900">Items Ordered</p>
+    <ul className="space-y-2">
+      {latestOrder.items.map(item => (
+        <li
+          key={item.id}
+          className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2 text-sm"
+        >
+          <span className="text-gray-800">
+            {item.name}
+          </span>
+          <span className="font-semibold text-gray-600">
+            × {item.quantity}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
 
         <Link
           href="/"
