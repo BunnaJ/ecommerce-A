@@ -12,7 +12,7 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-500">No order has been placed yet.</p>
-        <Link href="/products" className="ml-4 text-blue-600 hover:underline">
+        <Link href="/" className="ml-4 text-blue-600 hover:underline">
           Go to Products
         </Link>
       </div>
