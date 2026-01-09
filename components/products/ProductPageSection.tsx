@@ -64,7 +64,7 @@ export default function ProductPageSection() {
           <Navbar />
 
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="md:text-2xl font-bold text-gray-900">
              Products page
             </h1>
             <p className={`${sniglet.className} text-sm text-gray-600`}>

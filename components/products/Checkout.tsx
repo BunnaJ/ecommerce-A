@@ -23,7 +23,7 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-linear-to-b from-[#cbd6da] to-white p-6">
       <div className="mx-auto max-w-3xl rounded-2xl bg-white/70 p-6 shadow backdrop-blur">
 
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">Order Confirmation</h1>
+        <h1 className="md:text-2xl font-bold mb-4 text-gray-900">Order Confirmation</h1>
 
         <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm space-y-4">
   

@@ -22,7 +22,7 @@ export default function CartPage() {
     <div className="min-h-screen bg-leaner-to-b from-[#cbd6da] to-white p-6">
       <div className="mx-auto max-w-4xl rounded-3xl bg-white/70 p-6 shadow backdrop-blur">
 
-        <h1 className="mb-6 text-2xl font-bold text-gray-900">Your Cart</h1>
+        <h1 className="mb-6 md:text-2xl font-bold text-gray-900">Your Cart</h1>
 
         {cart.length === 0 ? (
           <p className="text-gray-500">
