@@ -31,10 +31,10 @@ export default function CheckoutPage() {
   <div className="grid grid-cols-2 gap-4 text-sm">
     <div>
       <p className="text-gray-500">Order ID</p>
-      <p className="font-semibold text-gray-900">{latestOrder.id}</p>
+      <p className="font-semibold text-xs text-gray-900">{latestOrder.id}</p>
     </div>
 
-    <div>
+    <div className='flex flex-col items-center'>
       <p className="text-gray-500">Status</p>
       <span
         className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold
@@ -54,7 +54,7 @@ export default function CheckoutPage() {
   {/* Total */}
   <div className="flex items-center justify-between rounded-xl bg-gray-50 px-4 py-3">
     <p className="text-sm text-gray-600">Total Amount</p>
-    <p className="text-lg font-bold text-gray-900">
+    <p className="md:text-lg font-bold text-gray-900">
       ₦{latestOrder.total.toLocaleString()}
     </p>
   </div>

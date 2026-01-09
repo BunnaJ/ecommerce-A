@@ -77,21 +77,25 @@ export default function CartPage() {
                     </div>
 
                     {/* Remove button */}
-                    <button
+                   
+                  </div>
+
+                 <div className="flex items-center justify-end ">
+                 <button
                       onClick={() => removeFromCart(item.id)}
-                      className="mt-2 sm:mt-0 text-sm text-red-500 hover:underline"
+                      className="mt-2 sm:mt-0 text-sm text-red-500 hover:underline border p-1 rounded bg-pink-50"
                     >
                       Remove
                     </button>
-                  </div>
+                 </div>
                 </div>
               ))}
             </div>
 
             {/* Total */}
-            <div className="mt-6 bg-[#c1bdba] flex items-center justify-between border-t pt-4 font-semibold">
+            <div className="mt-6  flex items-center justify-between border-t pt-4 font-semibold p-3">
               <span>Total</span>
-              <span className='bg-[#e8e2e0] p-2'>₦{total.toLocaleString()}</span>
+              <span className='bg-[#e8e2e0] p-3 border-b border-b-emerald-800'>₦{total.toLocaleString()}</span>
             </div>
 
             {/* Checkout */}
